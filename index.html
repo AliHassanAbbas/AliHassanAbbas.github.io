@@ -254,34 +254,14 @@
 (() => {
  const list=document.querySelector('#work .project-list'); if(!list)return;
  const key='ali-portfolio-project-order-v1';
- const cards=()=>Array.from(list.querySelectorAll(':scope > .project-card'));
- const toolbar=document.createElement('div'); toolbar.className='project-toolbar';
- toolbar.innerHTML='<p>Want a different project at the top? Enable reorder mode, then drag cards or use the arrows.</p><div class="project-toolbar-actions"><button class="order-btn primary" id="toggleOrder" type="button" aria-pressed="false">↕ Reorder projects</button><button class="order-btn" id="resetOrder" type="button" hidden>Reset order</button></div>';
- list.parentNode.insertBefore(toolbar,list);
- const toggle=toolbar.querySelector('#toggleOrder'),reset=toolbar.querySelector('#resetOrder');
- const status=document.createElement('p');status.className='order-status';status.setAttribute('aria-live','polite');toolbar.appendChild(status);
- let enabled=false,dragged=null;
- cards().forEach((card,i)=>{
-  card.dataset.projectId='project-'+(i+1);
-  const copy=card.querySelector('.project-copy'),handle=document.createElement('button');
-  handle.type='button';handle.className='drag-handle';handle.textContent='⠿';handle.title='Drag to reorder';handle.setAttribute('aria-label','Drag project '+(i+1));handle.hidden=true;copy.prepend(handle);
-  const controls=document.createElement('div');controls.className='move-controls';controls.hidden=true;
-  controls.innerHTML='<button type="button" data-move="up">↑ Move up</button><button type="button" data-move="down">↓ Move down</button>';copy.appendChild(controls);
-  controls.addEventListener('click',e=>{const d=e.target.closest('button')?.dataset.move;if(!d)return;const sib=d==='up'?card.previousElementSibling:card.nextElementSibling;if(!sib)return;if(d==='up')list.insertBefore(card,sib);else list.insertBefore(sib,card);save();});
-  card.addEventListener('dragstart',e=>{if(!enabled||e.target!==handle){e.preventDefault();return;}dragged=card;card.classList.add('dragging');e.dataTransfer.effectAllowed='move';});
-  card.addEventListener('dragover',e=>{if(!enabled||!dragged||dragged===card)return;e.preventDefault();card.classList.add('drag-over');});
-  card.addEventListener('dragleave',()=>card.classList.remove('drag-over'));
-  card.addEventListener('drop',e=>{e.preventDefault();card.classList.remove('drag-over');if(!dragged||dragged===card)return;const r=card.getBoundingClientRect();list.insertBefore(dragged,e.clientY>r.top+r.height/2?card.nextElementSibling:card);save();});
-  card.addEventListener('dragend',()=>{card.classList.remove('dragging');cards().forEach(c=>c.classList.remove('drag-over'));dragged=null;});
- });
- function save(){try{localStorage.setItem(key,JSON.stringify(cards().map(c=>c.dataset.projectId)));status.textContent='Order saved in this browser.';}catch(_){status.textContent='Could not save in browser storage.';}refresh();}
- function refresh(){cards().forEach((c,i,a)=>{const b=c.querySelectorAll('.move-controls button');b[0].disabled=i===0;b[1].disabled=i===a.length-1;});}
- function mode(on){enabled=on;toggle.setAttribute('aria-pressed',String(on));toggle.textContent=on?'✓ Done reordering':'↕ Reorder projects';reset.hidden=!on;cards().forEach(c=>{c.classList.toggle('is-draggable',on);c.querySelector('.drag-handle').hidden=!on;c.querySelector('.drag-handle').draggable=on;c.querySelector('.move-controls').hidden=!on;});status.textContent=on?'Drag using ⠿, or use Move up / Move down.':'Your preferred order is saved in this browser.';refresh();}
- let saved=[];try{saved=JSON.parse(localStorage.getItem(key)||'[]');}catch(_){}
- if(Array.isArray(saved)&&saved.length){const map=new Map(cards().map(c=>[c.dataset.projectId,c]));saved.forEach(id=>{if(map.has(id))list.appendChild(map.get(id));});}
- toggle.addEventListener('click',()=>mode(!enabled));
- reset.addEventListener('click',()=>{localStorage.removeItem(key);cards().sort((a,b)=>Number(a.dataset.projectId.split('-')[1])-Number(b.dataset.projectId.split('-')[1])).forEach(c=>list.appendChild(c));status.textContent='Original order restored.';refresh();});
- mode(false);
+ const cards=Array.from(list.querySelectorAll(':scope > .project-card'));
+ cards.forEach((card,i)=>{card.dataset.projectId='project-'+(i+1);});
+ try {
+  const saved=JSON.parse(localStorage.getItem(key)||'[]');
+  if(!Array.isArray(saved)||!saved.length)return;
+  const byId=new Map(cards.map(card=>[card.dataset.projectId,card]));
+  saved.forEach(id=>{if(byId.has(id))list.appendChild(byId.get(id));});
+ } catch(_){}
 })();
 </script>
 </body></html>
