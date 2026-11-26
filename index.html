@@ -21,17 +21,24 @@
     .columns{display:grid;grid-template-columns:1fr 1fr;gap:30px}.list{padding-left:20px;color:var(--muted)}.list li{margin:7px 0}.connect{display:flex;gap:12px;flex-wrap:wrap}.connect a{border:1px solid var(--line);padding:9px 14px;border-radius:9px;background:var(--panel)}
     footer{padding:28px 0 42px;color:var(--muted);font-size:.88rem} @media(max-width:700px){.hero{padding:65px 0 55px}.grid,.columns{grid-template-columns:1fr}nav{align-items:flex-start}.links{gap:12px!important}}
   
-    .video-categories{display:grid;gap:22px}
-    .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:14px}
-    .video-card{display:block;overflow:hidden;border:1px solid var(--border, #ddd);border-radius:12px;text-decoration:none;background:var(--card, #fff);color:inherit}
-    .video-card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#eee}
-    .video-card span{display:block;padding:11px 12px;font-weight:600;line-height:1.4}
-    .video-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.10)}
+
+    .project-list{display:grid;gap:16px}
+    .project-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,38%);gap:22px;align-items:center;background:linear-gradient(145deg,#141f35,#10182a);border:1px solid var(--line);border-radius:14px;padding:18px}
+    .project-copy h3{font-size:1.08rem;margin:0 0 7px}
+    .project-copy p{color:var(--muted);font-size:.94rem;margin:0 0 15px}
+    .project-links{display:flex;gap:12px;flex-wrap:wrap}
+    .notebook-link{display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #45618e;border-radius:7px;background:#172744;color:#dce8ff;font-size:.78rem;font-weight:850;letter-spacing:.045em}
+    .project-video{position:relative;display:block;overflow:hidden;border:1px solid var(--line);border-radius:10px;aspect-ratio:16/9;background:#080d18}
+    .project-video img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
+    .project-video:hover img{transform:scale(1.035)}
+    .play-mark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:rgba(5,10,20,.78);color:white;font-size:16px;padding-left:3px}
+    .project-placeholder{aspect-ratio:16/9;display:grid;place-items:center;border:1px dashed #34435f;border-radius:10px;color:var(--mint);font-size:.76rem;letter-spacing:.12em;font-weight:700}
+    @media(max-width:700px){.project-card{grid-template-columns:1fr}.project-video,.project-placeholder{grid-row:2}}
 
   </style>
 </head>
 <body>
-<header><div class="wrap"><nav><a class="brand" href="#">ALI HASSAN ABBAS</a><div class="links"><a href="#work">Projects</a><a href="#focus">Research</a><a href="#videos">Videos</a><a href="#teaching">Teaching</a><a href="#connect">Contact</a></div></nav></div></header>
+<header><div class="wrap"><nav><a class="brand" href="#">ALI HASSAN ABBAS</a><div class="links"><a href="#work">Projects</a><a href="#focus">Research</a><a href="#work">Projects</a><a href="#teaching">Teaching</a><a href="#connect">Contact</a></div></nav></div></header>
 <main>
   <div class="wrap">
     <section class="hero" style="border:0">
@@ -52,17 +59,152 @@
     </section>
 
     <section id="work">
-      <h2>Selected projects</h2><p class="intro">A selection of hands-on repositories. Each project README describes its actual implementation scope, setup, and limitations.</p>
-      <div class="grid">
-        <article class="card"><h3><a href="https://github.com/AliHassanAbbas/Coding-a-Transformer-on-PyTorch-from-scratch">Transformer from Scratch</a></h3><p>Encoder–decoder Transformer implementation and core attention concepts.</p><span class="tag">NLP</span><span class="tag">PyTorch</span></article>
-        <article class="card"><h3><a href="https://github.com/AliHassanAbbas/Coding-Vit-Vision-transformer-from-scratch-in-hindi-urdu.">Vision Transformer</a></h3><p>Patch embeddings and Transformer-based visual representation learning.</p><span class="tag">Computer Vision</span></article>
-        <article class="card"><h3><a href="https://github.com/AliHassanAbbas/Coding-bert-From-Scratch-with-pytorch-in-hindi-urdu">BERT from Scratch</a></h3><p>Exploring bidirectional Transformer encoder concepts with PyTorch.</p><span class="tag">NLP</span></article>
-        <article class="card"><h3><a href="https://github.com/AliHassanAbbas/PaliGemma-training-inference-pytorch">PaliGemma: Training & Inference</a></h3><p>Notebook-based exploration of vision-language model workflows.</p><span class="tag">Multimodal AI</span></article>
-        <article class="card"><h3><a href="https://github.com/AliHassanAbbas/stable-diffusion-training-inference-pytorch-">Stable Diffusion with PyTorch</a></h3><p>Latent diffusion components, text conditioning, and inference workflow.</p><span class="tag">Generative AI</span></article>
-        <article class="card"><h3><a href="https://github.com/AliHassanAbbas/U-Net-From-Scratch-Using-PyTorch-Image-Segmentation-with-PyTorch-From-Scratch.">U-Net from Scratch</a></h3><p>Encoder–decoder architecture for image segmentation.</p><span class="tag">Computer Vision</span></article>
-        <article class="card"><h3><a href="https://github.com/AliHassanAbbas/Deep-Learning-Models-In-Pytorch">Deep Learning Models in PyTorch</a></h3><p>A growing collection of model and architecture implementations.</p><span class="tag">PyTorch</span></article>
-        <article class="card"><h3><a href="https://github.com/AliHassanAbbas/Advance-Pytorch-Projects/tree/main/5%20LLaMA%202%20from%20scratch">LLaMA 2 from Scratch</a></h3><p>Decoder-only language-model architecture and implementation.</p><span class="tag">LLMs</span><span class="tag">PyTorch</span></article>
-        <article class="card"><h3><a href="https://github.com/AliHassanAbbas/Advance-Pytorch-Projects/tree/main/4%20Swin%20Transformer%20from%20Scratch">Swin Transformer from Scratch</a></h3><p>Hierarchical vision Transformer with shifted-window attention.</p><span class="tag">Computer Vision</span></article>
+      <h2>Selected projects</h2><p class="intro">A curated collection of hands-on PyTorch implementations. Explore the notebook or repository, and watch the corresponding walkthrough directly from each project card.</p>
+      <div class="project-list">
+        <article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/Coding-a-Transformer-on-PyTorch-from-scratch" target="_blank" rel="noopener">Transformer from Scratch</a></h3>
+    <p>Encoder–decoder Transformer, multi-head attention, and sequence modelling.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/Coding-a-Transformer-on-PyTorch-from-scratch/blob/main/Coding_a_Transformer_on_PyTorch_from_scratch_.ipynb" target="_blank" rel="noopener">OPEN NOTEBOOK ↗</a></div>
+  </div>
+  <a class="project-video" href="https://www.youtube.com/watch?v=EZxw6E6TZ7E" target="_blank" rel="noopener" aria-label="Watch Transformer from Scratch video"><img src="https://img.youtube.com/vi/EZxw6E6TZ7E/hqdefault.jpg" alt="Transformer from Scratch video thumbnail" loading="lazy"><span class="play-mark" aria-hidden="true">▶</span></a>
+</article>
+<article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/Coding-Vit-Vision-transformer-from-scratch-in-hindi-urdu." target="_blank" rel="noopener">Vision Transformer (ViT)</a></h3>
+    <p>Patch embeddings and Transformer-based visual representation learning.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/Coding-Vit-Vision-transformer-from-scratch-in-hindi-urdu./blob/main/Coding_Vit(Vision_transformer)_from_scratch_in_hindi_urdu%20(1).ipynb" target="_blank" rel="noopener">OPEN NOTEBOOK ↗</a></div>
+  </div>
+  <a class="project-video" href="https://www.youtube.com/watch?v=g9Y4Ghc8MII" target="_blank" rel="noopener" aria-label="Watch Vision Transformer (ViT) video"><img src="https://img.youtube.com/vi/g9Y4Ghc8MII/hqdefault.jpg" alt="Vision Transformer (ViT) video thumbnail" loading="lazy"><span class="play-mark" aria-hidden="true">▶</span></a>
+</article>
+<article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/Coding-bert-From-Scratch-with-pytorch-in-hindi-urdu" target="_blank" rel="noopener">BERT from Scratch</a></h3>
+    <p>Bidirectional Transformer encoder concepts implemented with PyTorch.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/Coding-bert-From-Scratch-with-pytorch-in-hindi-urdu/blob/main/Coding_bert_From_Scratch_with_pytorch_in_hindi_urdu.ipynb" target="_blank" rel="noopener">OPEN NOTEBOOK ↗</a></div>
+  </div>
+  <a class="project-video" href="https://www.youtube.com/watch?v=7ldzoCTQeSM" target="_blank" rel="noopener" aria-label="Watch BERT from Scratch video"><img src="https://img.youtube.com/vi/7ldzoCTQeSM/hqdefault.jpg" alt="BERT from Scratch video thumbnail" loading="lazy"><span class="play-mark" aria-hidden="true">▶</span></a>
+</article>
+<article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/PaliGemma-training-inference-pytorch" target="_blank" rel="noopener">PaliGemma: Vision-Language Model</a></h3>
+    <p>Notebook-based exploration of multimodal vision-language workflows.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/PaliGemma-training-inference-pytorch/blob/main/PaliGemma_from_scratch_Flickr8k_(2)%20(1).ipynb" target="_blank" rel="noopener">OPEN NOTEBOOK ↗</a></div>
+  </div>
+  <div class="project-placeholder"><span>PYTORCH IMPLEMENTATION</span></div>
+</article>
+<article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/stable-diffusion-training-inference-pytorch-" target="_blank" rel="noopener">Stable Diffusion with PyTorch</a></h3>
+    <p>Latent diffusion components, text conditioning, and inference workflow.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/stable-diffusion-training-inference-pytorch-/blob/main/Stable_Diffusion_From_Scratch.ipynb" target="_blank" rel="noopener">OPEN NOTEBOOK ↗</a></div>
+  </div>
+  <div class="project-placeholder"><span>PYTORCH IMPLEMENTATION</span></div>
+</article>
+<article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/U-Net-From-Scratch-Using-PyTorch-Image-Segmentation-with-PyTorch-From-Scratch." target="_blank" rel="noopener">U-Net for Image Segmentation</a></h3>
+    <p>Encoder–decoder architecture and skip connections for semantic segmentation.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/U-Net-From-Scratch-Using-PyTorch-Image-Segmentation-with-PyTorch-From-Scratch./blob/main/U_Net_From_Scratch_Using_PyTorch____Image_Segmentation_with_PyTorch_From_Scratch.ipynb" target="_blank" rel="noopener">OPEN NOTEBOOK ↗</a></div>
+  </div>
+  <div class="project-placeholder"><span>PYTORCH IMPLEMENTATION</span></div>
+</article>
+<article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/Advance-Pytorch-Projects/tree/main/5%20LLaMA%202%20from%20scratch" target="_blank" rel="noopener">LLaMA 2 from Scratch</a></h3>
+    <p>Decoder-only language-model architecture and implementation.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/Advance-Pytorch-Projects/tree/main/5%20LLaMA%202%20from%20scratch" target="_blank" rel="noopener">VIEW REPOSITORY ↗</a></div>
+  </div>
+  <div class="project-placeholder"><span>PYTORCH IMPLEMENTATION</span></div>
+</article>
+<article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/Advance-Pytorch-Projects/tree/main/4%20Swin%20Transformer%20from%20Scratch" target="_blank" rel="noopener">Swin Transformer from Scratch</a></h3>
+    <p>Hierarchical vision Transformer with shifted-window attention.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/Advance-Pytorch-Projects/tree/main/4%20Swin%20Transformer%20from%20Scratch" target="_blank" rel="noopener">VIEW REPOSITORY ↗</a></div>
+  </div>
+  <div class="project-placeholder"><span>PYTORCH IMPLEMENTATION</span></div>
+</article>
+<article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/Pytorch-Projects-" target="_blank" rel="noopener">ResNet Image Classification</a></h3>
+    <p>Residual networks across ResNet18, 34, 50, 101, and 152.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/Pytorch-Projects-/blob/main/1%20image%20classification%20Pytorch/6_Image_classification_with_ResNet_with_Pytorch.ipynb" target="_blank" rel="noopener">OPEN NOTEBOOK ↗</a></div>
+  </div>
+  <a class="project-video" href="https://www.youtube.com/watch?v=iOe3HVptoJE" target="_blank" rel="noopener" aria-label="Watch ResNet Image Classification video"><img src="https://img.youtube.com/vi/iOe3HVptoJE/hqdefault.jpg" alt="ResNet Image Classification video thumbnail" loading="lazy"><span class="play-mark" aria-hidden="true">▶</span></a>
+</article>
+<article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/Pytorch-Projects-" target="_blank" rel="noopener">VGGNet Image Classification</a></h3>
+    <p>VGG11, VGG13, VGG16, and VGG19 model implementations.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/Pytorch-Projects-/blob/main/1%20image%20classification%20Pytorch/5_Image_classification_with_VGGNET_in_pytorch.ipynb" target="_blank" rel="noopener">OPEN NOTEBOOK ↗</a></div>
+  </div>
+  <a class="project-video" href="https://www.youtube.com/watch?v=I3UWuBnlr_g" target="_blank" rel="noopener" aria-label="Watch VGGNet Image Classification video"><img src="https://img.youtube.com/vi/I3UWuBnlr_g/hqdefault.jpg" alt="VGGNet Image Classification video thumbnail" loading="lazy"><span class="play-mark" aria-hidden="true">▶</span></a>
+</article>
+<article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/Pytorch-Projects-" target="_blank" rel="noopener">AlexNet Image Classification</a></h3>
+    <p>Classic convolutional architecture implemented in PyTorch.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/Pytorch-Projects-/blob/main/1%20image%20classification%20Pytorch/4_Image_classification_with_AlexNet_in_pytorch.ipynb" target="_blank" rel="noopener">OPEN NOTEBOOK ↗</a></div>
+  </div>
+  <a class="project-video" href="https://www.youtube.com/watch?v=1PTxKyYNPlk" target="_blank" rel="noopener" aria-label="Watch AlexNet Image Classification video"><img src="https://img.youtube.com/vi/1PTxKyYNPlk/hqdefault.jpg" alt="AlexNet Image Classification video thumbnail" loading="lazy"><span class="play-mark" aria-hidden="true">▶</span></a>
+</article>
+<article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/Pytorch-Projects-" target="_blank" rel="noopener">LeNet-5 Image Classification</a></h3>
+    <p>Foundational CNN architecture and image-classification workflow.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/Pytorch-Projects-/blob/main/1%20image%20classification%20Pytorch/3_Image_classification_with_LeNet_in_pytorch.ipynb" target="_blank" rel="noopener">OPEN NOTEBOOK ↗</a></div>
+  </div>
+  <a class="project-video" href="https://www.youtube.com/watch?v=IaOq_LN2bEY" target="_blank" rel="noopener" aria-label="Watch LeNet-5 Image Classification video"><img src="https://img.youtube.com/vi/IaOq_LN2bEY/hqdefault.jpg" alt="LeNet-5 Image Classification video thumbnail" loading="lazy"><span class="play-mark" aria-hidden="true">▶</span></a>
+</article>
+<article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/Pytorch-Projects-" target="_blank" rel="noopener">MLP Image Classification</a></h3>
+    <p>Multi-layer perceptron baseline for image classification.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/Pytorch-Projects-/blob/main/1%20image%20classification%20Pytorch/2_Image_classification_with_MLP_%28Advanced%29_in_pytorch.ipynb" target="_blank" rel="noopener">OPEN NOTEBOOK ↗</a></div>
+  </div>
+  <a class="project-video" href="https://www.youtube.com/watch?v=IXC2ZG1mGEM" target="_blank" rel="noopener" aria-label="Watch MLP Image Classification video"><img src="https://img.youtube.com/vi/IXC2ZG1mGEM/hqdefault.jpg" alt="MLP Image Classification video thumbnail" loading="lazy"><span class="play-mark" aria-hidden="true">▶</span></a>
+</article>
+<article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/Pytorch-Projects-" target="_blank" rel="noopener">Sentiment Analysis with LSTM</a></h3>
+    <p>Sequence modelling for text sentiment classification.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/Pytorch-Projects-/blob/main/2%20Sentiment%20Analysis%20Pytorch/1_Sentiment_Analysis_with_LSTM_in_Pytorch.ipynb" target="_blank" rel="noopener">OPEN NOTEBOOK ↗</a></div>
+  </div>
+  <a class="project-video" href="https://www.youtube.com/watch?v=s1Bt4F2IFuQ" target="_blank" rel="noopener" aria-label="Watch Sentiment Analysis with LSTM video"><img src="https://img.youtube.com/vi/s1Bt4F2IFuQ/hqdefault.jpg" alt="Sentiment Analysis with LSTM video thumbnail" loading="lazy"><span class="play-mark" aria-hidden="true">▶</span></a>
+</article>
+<article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/Pytorch-Projects-" target="_blank" rel="noopener">Sentiment Analysis with Word Embeddings</a></h3>
+    <p>Learning text representations for sentiment classification.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/Pytorch-Projects-/blob/main/2%20Sentiment%20Analysis%20Pytorch/0_Sentiment_Analysis_with_NBoW_or_CBoW.ipynb" target="_blank" rel="noopener">OPEN NOTEBOOK ↗</a></div>
+  </div>
+  <a class="project-video" href="https://www.youtube.com/watch?v=-TCP0c1266Y" target="_blank" rel="noopener" aria-label="Watch Sentiment Analysis with Word Embeddings video"><img src="https://img.youtube.com/vi/-TCP0c1266Y/hqdefault.jpg" alt="Sentiment Analysis with Word Embeddings video thumbnail" loading="lazy"><span class="play-mark" aria-hidden="true">▶</span></a>
+</article>
+<article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/Pytorch-Projects-" target="_blank" rel="noopener">Seq2Seq Neural Machine Translation</a></h3>
+    <p>Encoder–decoder sequence-to-sequence workflow for a mini translation project.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/Pytorch-Projects-" target="_blank" rel="noopener">VIEW REPOSITORY ↗</a></div>
+  </div>
+  <a class="project-video" href="https://www.youtube.com/watch?v=rDWnyF_8hzw" target="_blank" rel="noopener" aria-label="Watch Seq2Seq Neural Machine Translation video"><img src="https://img.youtube.com/vi/rDWnyF_8hzw/hqdefault.jpg" alt="Seq2Seq Neural Machine Translation video thumbnail" loading="lazy"><span class="play-mark" aria-hidden="true">▶</span></a>
+</article>
+<article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/Deep-Learning-Models-In-Pytorch" target="_blank" rel="noopener">DCGAN Image Generation</a></h3>
+    <p>Deep convolutional generative adversarial network for image generation.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/Deep-Learning-Models-In-Pytorch" target="_blank" rel="noopener">VIEW REPOSITORY ↗</a></div>
+  </div>
+  <a class="project-video" href="https://www.youtube.com/watch?v=1zdRriruHpQ" target="_blank" rel="noopener" aria-label="Watch DCGAN Image Generation video"><img src="https://img.youtube.com/vi/1zdRriruHpQ/hqdefault.jpg" alt="DCGAN Image Generation video thumbnail" loading="lazy"><span class="play-mark" aria-hidden="true">▶</span></a>
+</article>
+<article class="project-card">
+  <div class="project-copy">
+    <h3><a href="https://github.com/AliHassanAbbas/Deep-Learning-Models-In-Pytorch" target="_blank" rel="noopener">GAN Image Generation</a></h3>
+    <p>Generative adversarial network fundamentals and image generation.</p>
+    <div class="project-links"><a class="notebook-link" href="https://github.com/AliHassanAbbas/Deep-Learning-Models-In-Pytorch" target="_blank" rel="noopener">VIEW REPOSITORY ↗</a></div>
+  </div>
+  <a class="project-video" href="https://www.youtube.com/watch?v=ExtS9Z2wJp8" target="_blank" rel="noopener" aria-label="Watch GAN Image Generation video"><img src="https://img.youtube.com/vi/ExtS9Z2wJp8/hqdefault.jpg" alt="GAN Image Generation video thumbnail" loading="lazy"><span class="play-mark" aria-hidden="true">▶</span></a>
+</article>
       </div>
     </section>
 
@@ -77,34 +219,7 @@
       </div>
     </section>
 
-<section id="videos">
-      <h2>Selected PyTorch coding videos</h2>
-      <p class="intro">Watch the actual video thumbnails below. Each thumbnail opens its full lesson on the <a href="https://www.youtube.com/@mrelanofficial" target="_blank" rel="noopener">mrelanofficial YouTube channel</a>.</p>
-      <div class="video-categories">
-        <article class="card video-category"><h3>NLP & Transformers</h3><div class="video-grid">
-<a class="video-card" href="https://www.youtube.com/watch?v=7ldzoCTQeSM" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/7ldzoCTQeSM/hqdefault.jpg" alt="BERT from Scratch YouTube thumbnail" loading="lazy"><span>BERT from Scratch</span></a>
-<a class="video-card" href="https://www.youtube.com/watch?v=EZxw6E6TZ7E" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/EZxw6E6TZ7E/hqdefault.jpg" alt="Transformer from Scratch YouTube thumbnail" loading="lazy"><span>Transformer from Scratch</span></a>
-<a class="video-card" href="https://www.youtube.com/watch?v=s1Bt4F2IFuQ" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/s1Bt4F2IFuQ/hqdefault.jpg" alt="Sentiment Analysis with LSTM YouTube thumbnail" loading="lazy"><span>Sentiment Analysis with LSTM</span></a>
-<a class="video-card" href="https://www.youtube.com/watch?v=-TCP0c1266Y" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/-TCP0c1266Y/hqdefault.jpg" alt="Sentiment Analysis with Word Embeddings YouTube thumbnail" loading="lazy"><span>Sentiment Analysis with Word Embeddings</span></a>
-<a class="video-card" href="https://www.youtube.com/watch?v=rDWnyF_8hzw" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/rDWnyF_8hzw/hqdefault.jpg" alt="Mini Google Translate with Seq2Seq YouTube thumbnail" loading="lazy"><span>Mini Google Translate with Seq2Seq</span></a>
-</div></article>
-<article class="card video-category"><h3>Computer Vision</h3><div class="video-grid">
-<a class="video-card" href="https://www.youtube.com/watch?v=g9Y4Ghc8MII" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/g9Y4Ghc8MII/hqdefault.jpg" alt="Vision Transformer (ViT) from Scratch YouTube thumbnail" loading="lazy"><span>Vision Transformer (ViT) from Scratch</span></a>
-<a class="video-card" href="https://www.youtube.com/watch?v=iOe3HVptoJE" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/iOe3HVptoJE/hqdefault.jpg" alt="ResNet from Scratch (ResNet18–152) YouTube thumbnail" loading="lazy"><span>ResNet from Scratch (ResNet18–152)</span></a>
-<a class="video-card" href="https://www.youtube.com/watch?v=I3UWuBnlr_g" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/I3UWuBnlr_g/hqdefault.jpg" alt="VGGNet from Scratch (VGG11–19) YouTube thumbnail" loading="lazy"><span>VGGNet from Scratch (VGG11–19)</span></a>
-<a class="video-card" href="https://www.youtube.com/watch?v=1PTxKyYNPlk" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/1PTxKyYNPlk/hqdefault.jpg" alt="AlexNet from Scratch YouTube thumbnail" loading="lazy"><span>AlexNet from Scratch</span></a>
-<a class="video-card" href="https://www.youtube.com/watch?v=IaOq_LN2bEY" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/IaOq_LN2bEY/hqdefault.jpg" alt="LeNet-5 from Scratch YouTube thumbnail" loading="lazy"><span>LeNet-5 from Scratch</span></a>
-<a class="video-card" href="https://www.youtube.com/watch?v=IXC2ZG1mGEM" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/IXC2ZG1mGEM/hqdefault.jpg" alt="Image Classification with MLP YouTube thumbnail" loading="lazy"><span>Image Classification with MLP</span></a>
-</div></article>
-<article class="card video-category"><h3>Generative AI</h3><div class="video-grid">
-<a class="video-card" href="https://www.youtube.com/watch?v=1zdRriruHpQ" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/1zdRriruHpQ/hqdefault.jpg" alt="DCGAN from Scratch YouTube thumbnail" loading="lazy"><span>DCGAN from Scratch</span></a>
-<a class="video-card" href="https://www.youtube.com/watch?v=ExtS9Z2wJp8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/ExtS9Z2wJp8/hqdefault.jpg" alt="GAN from Scratch YouTube thumbnail" loading="lazy"><span>GAN from Scratch</span></a>
-</div></article>
-      </div>
-      <p class="intro" style="margin-top:20px"><a href="https://www.youtube.com/@mrelanofficial" target="_blank" rel="noopener">Explore more PyTorch lessons on YouTube →</a></p>
-    </section>
-
-    <section id="teaching">
+<section id="teaching">
       <h2>Teaching and education</h2><p class="intro">I teach AI and deep learning with a first-principles approach: connect the mathematics to tensor shapes, implementation details, training behavior, and experiments.</p>
       <div class="columns">
         <div><h3>Learn with me</h3><ul class="list"><li><a href="https://www.youtube.com/@mrelanofficial">Ali Hassan AI on YouTube</a> — practical AI and PyTorch lessons</li><li><a href="https://mrelan.com">mrelan.com</a> — structured deep-learning education</li></ul></div>
