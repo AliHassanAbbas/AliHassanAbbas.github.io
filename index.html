@@ -4,53 +4,82 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1020">
-  <meta name="description" content="Ali Hassan Abbas — AI Researcher and PyTorch specialist. Deep learning implementations, research interests, and AI education.">
+  <meta name="description" content="Ali Hassan Abbas is an AI researcher and PyTorch specialist in Islamabad, Pakistan, building deep-learning architectures and exploring generative, multimodal, and vision-language AI.">
+  <meta name="author" content="Ali Hassan Abbas">
+  <meta property="og:locale" content="en_PK">
+  <meta property="og:site_name" content="Ali Hassan Abbas — AI Researcher">
+  <meta name="color-scheme" content="dark">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Ali Hassan Abbas","jobTitle":"AI Researcher and PyTorch Specialist","email":"alihassanofficial795@gmail.com","telephone":"+92-309-1724433","address":{"@type":"PostalAddress","addressLocality":"Islamabad","addressCountry":"PK"},"url":"https://alihassanabbas.github.io","sameAs":["https://www.linkedin.com/in/alihassanofficial/","https://github.com/AliHassanAbbas","https://www.youtube.com/@mrelanofficial"]}
+  </script>
   <meta property="og:title" content="Ali Hassan Abbas | AI Researcher">
   <meta property="og:description" content="Building and teaching deep learning from first principles with PyTorch.">
   <meta property="og:type" content="website">
   <title>Ali Hassan Abbas | AI Researcher & PyTorch Specialist</title>
   <style>
-    :root{color-scheme:dark;--bg:#0b1020;--panel:#111a2e;--line:#24314b;--text:#edf2ff;--muted:#a9b6ce;--accent:#8bb7ff;--mint:#83e2c1;--max:1080px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#18294a 0,transparent 38%),var(--bg);color:var(--text);font:16px/1.7 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline} .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
-    header{padding:22px 0;border-bottom:1px solid var(--line)}nav{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.brand{font-weight:750;letter-spacing:.02em;color:var(--text)}nav .links{display:flex;gap:20px;flex-wrap:wrap;font-size:.92rem}
-    .hero{padding:94px 0 76px}.eyebrow{color:var(--mint);font-size:.82rem;font-weight:750;letter-spacing:.16em;text-transform:uppercase}.hero h1{font-size:clamp(2.6rem,7vw,5rem);line-height:1.05;letter-spacing:-.055em;max-width:850px;margin:18px 0}.hero h1 span{color:var(--accent)}.lead{font-size:1.18rem;color:var(--muted);max-width:760px}
-    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;padding:11px 17px;border-radius:9px;border:1px solid #45618e;background:#172744;color:var(--text);font-weight:650}.btn.primary{background:var(--accent);color:#091225;border-color:var(--accent)}
-    section{padding:55px 0;border-top:1px solid var(--line)}h2{font-size:1.8rem;letter-spacing:-.03em;margin:0 0 8px}.intro{color:var(--muted);margin:0 0 26px;max-width:760px}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{background:linear-gradient(145deg,#141f35,#10182a);border:1px solid var(--line);border-radius:14px;padding:21px}.card h3{font-size:1.08rem;margin:0 0 7px}.card p{color:var(--muted);font-size:.94rem;margin:0 0 13px}.tag{display:inline-block;color:var(--mint);font-size:.78rem;margin-right:8px}
-    .columns{display:grid;grid-template-columns:1fr 1fr;gap:30px}.list{padding-left:20px;color:var(--muted)}.list li{margin:7px 0}.connect{display:flex;gap:12px;flex-wrap:wrap}.connect a{border:1px solid var(--line);padding:9px 14px;border-radius:9px;background:var(--panel)}
-    footer{padding:28px 0 42px;color:var(--muted);font-size:.88rem} @media(max-width:700px){.hero{padding:65px 0 55px}.grid,.columns{grid-template-columns:1fr}nav{align-items:flex-start}.links{gap:12px!important}}
-  
-
-    .project-list{display:grid;gap:16px}
-    .project-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,38%);gap:22px;align-items:center;background:linear-gradient(145deg,#141f35,#10182a);border:1px solid var(--line);border-radius:14px;padding:18px}
-    .project-copy h3{font-size:1.08rem;margin:0 0 7px}
-    .project-copy p{color:var(--muted);font-size:.94rem;margin:0 0 15px}
-    .project-links{display:flex;gap:12px;flex-wrap:wrap}
-    .notebook-link{display:inline-flex;align-items:center;padding:8px 12px;border:1px solid #45618e;border-radius:7px;background:#172744;color:#dce8ff;font-size:.78rem;font-weight:850;letter-spacing:.045em}
-    .project-video{position:relative;display:block;overflow:hidden;border:1px solid var(--line);border-radius:10px;aspect-ratio:16/9;background:#080d18}
-    .project-video img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
-    .project-video:hover img{transform:scale(1.035)}
-    .play-mark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:rgba(5,10,20,.78);color:white;font-size:16px;padding-left:3px}
-    .project-placeholder{aspect-ratio:16/9;display:grid;place-items:center;border:1px dashed #34435f;border-radius:10px;color:var(--mint);font-size:.76rem;letter-spacing:.12em;font-weight:700}
-    @media(max-width:700px){.project-card{grid-template-columns:1fr}.project-video,.project-placeholder{grid-row:2}}
-
-
-.project-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 16px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#0e1729}
-.project-toolbar p{margin:0;color:var(--muted);font-size:.86rem}
-.project-toolbar-actions,.move-controls{display:flex;gap:8px;flex-wrap:wrap}
-.order-btn,.drag-handle,.move-controls button{border:1px solid #45618e;border-radius:7px;background:#172744;color:var(--text);padding:7px 11px;cursor:pointer}
-.order-btn.primary{background:var(--accent);color:#091225}
-.order-status{color:var(--mint)!important;font-size:.8rem!important}
-.project-card{position:relative;transition:border-color .18s,opacity .18s,transform .18s}
-.project-card.is-draggable .project-copy{position:relative;padding-left:42px}
-.drag-handle{position:absolute;left:0;top:0;cursor:grab;font-size:1.1rem;padding:7px 10px}
-.project-card.dragging{opacity:.4;border-color:var(--mint)}
-.project-card.drag-over{border-color:var(--mint);box-shadow:0 0 0 1px var(--mint)}
-.move-controls{margin-top:12px}
-.move-controls button{background:#0e1729;border-color:var(--line);padding:5px 9px}
-.move-controls button:disabled{opacity:.35;cursor:not-allowed}
-
+    :root{color-scheme:dark;--bg:#070b16;--surface:#0d1526;--surface2:#111d32;--line:rgba(148,178,222,.16);--text:#edf4ff;--muted:#a2b2ca;--cyan:#67e8f9;--blue:#82aaff;--violet:#a78bfa;--green:#8be6c5;--max:1120px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:86px}
+    body{margin:0;background:radial-gradient(ellipse at 12% 4%,rgba(34,94,160,.2),transparent 32%),radial-gradient(ellipse at 88% 24%,rgba(105,65,190,.13),transparent 30%),var(--bg);color:var(--text);font:16px/1.72 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.17;background-image:linear-gradient(rgba(130,170,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(130,170,255,.08) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(to bottom,black,transparent 82%)}
+    a{color:var(--cyan);text-decoration:none;transition:color .2s ease,border-color .2s ease,background .2s ease}
+    a:hover{color:#fff;text-decoration:none}
+    .wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+    header{position:sticky;top:0;z-index:20;padding:15px 0;background:rgba(7,11,22,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    nav{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+    .brand{font-weight:850;letter-spacing:.08em;color:var(--text);font-size:.9rem}
+    .brand:before{content:"";display:inline-block;width:8px;height:8px;margin:0 10px 1px 0;border-radius:50%;background:var(--cyan);box-shadow:0 0 16px var(--cyan)}
+    nav .links{display:flex;gap:25px;flex-wrap:wrap;font-size:.88rem;font-weight:650}
+    nav .links a{color:var(--muted)}nav .links a:hover{color:var(--cyan)}
+    .hero{position:relative;isolation:isolate;overflow:hidden;padding:112px 0 94px;border:0!important}
+    .hero:after{content:"AI";position:absolute;z-index:-1;right:4%;top:50%;transform:translateY(-55%);font-size:clamp(12rem,27vw,24rem);line-height:1;font-weight:950;letter-spacing:-.12em;color:rgba(103,232,249,.035);text-shadow:0 0 100px rgba(103,232,249,.08);pointer-events:none}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--green);font-size:.76rem;font-weight:850;letter-spacing:.18em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:25px;height:1px;background:var(--green)}
+    .hero h1{font-size:clamp(2.8rem,7.5vw,5.8rem);line-height:1.02;letter-spacing:-.065em;max-width:900px;margin:23px 0 20px}
+    .hero h1 span{background:linear-gradient(100deg,var(--cyan),var(--blue) 55%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{font-size:clamp(1.05rem,2vw,1.2rem);color:var(--muted);max-width:760px;line-height:1.85}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:9px;border:1px solid var(--line);background:rgba(17,29,50,.8);color:var(--text);font-weight:700;font-size:.9rem;transition:transform .2s,border-color .2s,box-shadow .2s}
+    .btn:hover{transform:translateY(-2px);border-color:rgba(103,232,249,.55);box-shadow:0 8px 28px rgba(0,0,0,.2)}
+    .btn.primary{background:linear-gradient(110deg,var(--cyan),#9bbcff);color:#07111f;border-color:transparent}
+    section{padding:68px 0;border-top:1px solid var(--line)}
+    h2{font-size:clamp(1.65rem,3vw,2.15rem);letter-spacing:-.045em;margin:0 0 9px}
+    h2:after{content:"";display:block;width:44px;height:3px;margin-top:13px;border-radius:4px;background:linear-gradient(90deg,var(--cyan),var(--violet))}
+    .intro{color:var(--muted);margin:15px 0 30px;max-width:790px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+    .card{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(17,29,50,.94),rgba(10,18,33,.96));border:1px solid var(--line);border-radius:15px;padding:23px;transition:transform .22s,border-color .22s,box-shadow .22s}
+    .card:before{content:"";position:absolute;inset:0 0 auto;height:1px;background:linear-gradient(90deg,transparent,rgba(103,232,249,.45),transparent);opacity:.65}
+    .card:hover{transform:translateY(-3px);border-color:rgba(103,232,249,.35);box-shadow:0 14px 38px rgba(0,0,0,.22)}
+    .card h3{font-size:1.08rem;margin:0 0 7px}.card p{color:var(--muted);font-size:.93rem;margin:0 0 13px}
+    .tag{display:inline-block;color:var(--green);font-size:.75rem;font-weight:700;margin:4px 9px 0 0;padding:3px 9px;border:1px solid rgba(139,230,197,.17);border-radius:20px;background:rgba(139,230,197,.05)}
+    .columns{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    .list{padding-left:20px;color:var(--muted)}.list li{margin:7px 0}
+    .project-list{display:grid;gap:18px}
+    .project-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,38%);gap:24px;align-items:center;background:linear-gradient(135deg,rgba(17,29,50,.98),rgba(10,17,31,.98));border:1px solid var(--line);border-radius:16px;padding:20px;position:relative;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s}
+    .project-card:before{content:"";position:absolute;left:0;top:16px;bottom:16px;width:2px;background:linear-gradient(var(--cyan),var(--violet));opacity:.7}
+    .project-card:hover{border-color:rgba(103,232,249,.34);transform:translateY(-2px);box-shadow:0 16px 42px rgba(0,0,0,.22)}
+    .project-copy h3{font-size:1.08rem;line-height:1.45;margin:0 0 8px}.project-copy h3 a{color:var(--text)}.project-copy h3 a:hover{color:var(--cyan)}
+    .project-copy p{color:var(--muted);font-size:.92rem;margin:0 0 15px}
+    .project-links{display:flex;gap:9px;flex-wrap:wrap}
+    .notebook-link{display:inline-flex;align-items:center;padding:8px 11px;border:1px solid rgba(130,170,255,.28);border-radius:7px;background:rgba(25,44,73,.68);color:#dceaff;font-size:.72rem;font-weight:850;letter-spacing:.035em}
+    .notebook-link:hover{border-color:var(--cyan);background:rgba(103,232,249,.1);color:#fff}
+    .project-video{position:relative;display:block;overflow:hidden;border:1px solid var(--line);border-radius:11px;aspect-ratio:16/9;background:#050914}
+    .project-video img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .35s ease,opacity .35s}
+    .project-video:hover img{transform:scale(1.045);opacity:.85}
+    .play-mark{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:46px;height:46px;border:1px solid rgba(255,255,255,.4);border-radius:50%;background:rgba(5,10,20,.78);color:white;font-size:16px;padding-left:3px;backdrop-filter:blur(8px)}
+    .project-placeholder{aspect-ratio:16/9;display:grid;place-items:center;border:1px dashed #34435f;border-radius:10px;color:var(--green);font-size:.76rem;letter-spacing:.12em;font-weight:700}
+    .connect{display:flex;gap:10px;flex-wrap:wrap}
+    .connect a{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);padding:10px 14px;border-radius:9px;background:rgba(13,21,38,.9);color:var(--text);font-size:.88rem;font-weight:650}
+    .connect a:hover{border-color:var(--cyan);color:var(--cyan)}
+    .contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin:26px 0}
+    .contact-item{padding:17px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(145deg,rgba(17,29,50,.85),rgba(10,18,33,.9));min-width:0}
+    .contact-label{display:block;color:var(--muted);font-size:.73rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px}
+    .contact-item a,.contact-item strong{font-size:.92rem;overflow-wrap:anywhere;color:var(--text);font-weight:700}
+    .contact-item a:hover{color:var(--cyan)}
+    footer{padding:28px 0 42px;color:var(--muted);font-size:.84rem;border-top:1px solid var(--line)}
+    .footer-meta{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.footer-meta a{color:var(--muted)}.footer-meta a:hover{color:var(--cyan)}
+    @media(max-width:760px){.hero{padding:76px 0 65px}.hero:after{right:-3%;top:20%;font-size:12rem}.grid,.columns{grid-template-columns:1fr}.project-card{grid-template-columns:1fr}.project-video,.project-placeholder{grid-row:2}.contact-grid{grid-template-columns:1fr}.wrap{width:min(var(--max),calc(100% - 32px))}nav{align-items:flex-start}.links{gap:13px!important}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
   </style>
 </head>
 <body>
@@ -61,7 +90,7 @@
       <div class="eyebrow">AI Research · Deep Learning · PyTorch</div>
       <h1>Building AI by <span>understanding it</span> from the inside out.</h1>
       <p class="lead">I'm Ali Hassan Abbas, an AI researcher and PyTorch specialist focused on implementing deep-learning architectures, exploring modern AI systems, and teaching the ideas behind the code.</p>
-      <div class="actions"><a class="btn primary" href="#work">Explore my projects</a><a class="btn" href="https://www.linkedin.com/in/alihassanofficial/" target="_blank" rel="noopener">Connect on LinkedIn</a><a class="btn" href="https://github.com/AliHassanAbbas" target="_blank" rel="noopener">GitHub profile</a></div>
+      <div class="actions"><a class="btn primary" href="#work">Explore my projects</a><a class="btn" href="mailto:alihassanofficial795@gmail.com">Contact me</a><a class="btn" href="https://www.linkedin.com/in/alihassanofficial/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn" href="https://github.com/AliHassanAbbas" target="_blank" rel="noopener">GitHub ↗</a></div>
     </section>
 
     <section id="work">
@@ -244,12 +273,17 @@
     </section>
 
     <section id="connect">
-      <h2>Let's connect</h2><p class="intro">For AI research, deep-learning engineering, teaching, and collaboration opportunities.</p>
-      <div class="connect"><a href="https://www.linkedin.com/in/alihassanofficial/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/AliHassanAbbas" target="_blank" rel="noopener">GitHub</a><a href="https://www.youtube.com/@mrelanofficial" target="_blank" rel="noopener">YouTube</a><a href="https://mrelan.com" target="_blank" rel="noopener">mrelan.com</a></div>
+      <h2>Let's build something meaningful</h2><p class="intro">Open to AI research collaborations, deep-learning engineering opportunities, technical education, and conversations about building models from first principles.</p>
+      <div class="contact-grid">
+        <div class="contact-item"><span class="contact-label">Email</span><a href="mailto:alihassanofficial795@gmail.com">alihassanofficial795@gmail.com</a></div>
+        <div class="contact-item"><span class="contact-label">Phone / WhatsApp</span><a href="tel:+923091724433">+92 309 1724433</a></div>
+        <div class="contact-item"><span class="contact-label">Location</span><strong>Islamabad, Pakistan</strong></div>
+      </div>
+      <div class="connect"><a href="mailto:alihassanofficial795@gmail.com">Send an email ↗</a><a href="tel:+923091724433">Call / WhatsApp ↗</a><a href="https://www.linkedin.com/in/alihassanofficial/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/AliHassanAbbas" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.youtube.com/@mrelanofficial" target="_blank" rel="noopener">YouTube ↗</a><a href="https://mrelan.com" target="_blank" rel="noopener">mrelan.com ↗</a></div>
     </section>
   </div>
 </main>
-<footer><div class="wrap">© <span id="year">2026</span> Ali Hassan Abbas · Built with HTML and CSS · Hosted on GitHub Pages</div></footer>
+<footer><div class="wrap footer-meta"><span>© <span id="year">2026</span> Ali Hassan Abbas · AI Researcher & PyTorch Specialist</span><span><a href="mailto:alihassanofficial795@gmail.com">alihassanofficial795@gmail.com</a> · Islamabad, Pakistan</span></div></footer>
 <script>
 (() => {
  const list=document.querySelector('#work .project-list'); if(!list)return;
