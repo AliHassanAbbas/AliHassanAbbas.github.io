@@ -35,6 +35,22 @@
     .project-placeholder{aspect-ratio:16/9;display:grid;place-items:center;border:1px dashed #34435f;border-radius:10px;color:var(--mint);font-size:.76rem;letter-spacing:.12em;font-weight:700}
     @media(max-width:700px){.project-card{grid-template-columns:1fr}.project-video,.project-placeholder{grid-row:2}}
 
+
+.project-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 16px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#0e1729}
+.project-toolbar p{margin:0;color:var(--muted);font-size:.86rem}
+.project-toolbar-actions,.move-controls{display:flex;gap:8px;flex-wrap:wrap}
+.order-btn,.drag-handle,.move-controls button{border:1px solid #45618e;border-radius:7px;background:#172744;color:var(--text);padding:7px 11px;cursor:pointer}
+.order-btn.primary{background:var(--accent);color:#091225}
+.order-status{color:var(--mint)!important;font-size:.8rem!important}
+.project-card{position:relative;transition:border-color .18s,opacity .18s,transform .18s}
+.project-card.is-draggable .project-copy{position:relative;padding-left:42px}
+.drag-handle{position:absolute;left:0;top:0;cursor:grab;font-size:1.1rem;padding:7px 10px}
+.project-card.dragging{opacity:.4;border-color:var(--mint)}
+.project-card.drag-over{border-color:var(--mint);box-shadow:0 0 0 1px var(--mint)}
+.move-controls{margin-top:12px}
+.move-controls button{background:#0e1729;border-color:var(--line);padding:5px 9px}
+.move-controls button:disabled{opacity:.35;cursor:not-allowed}
+
   </style>
 </head>
 <body>
@@ -234,4 +250,40 @@
   </div>
 </main>
 <footer><div class="wrap">© <span id="year">2026</span> Ali Hassan Abbas · Built with HTML and CSS · Hosted on GitHub Pages</div></footer>
+<script>
+(() => {
+ const list=document.querySelector('#work .project-list'); if(!list)return;
+ const key='ali-portfolio-project-order-v1';
+ const cards=()=>Array.from(list.querySelectorAll(':scope > .project-card'));
+ const toolbar=document.createElement('div'); toolbar.className='project-toolbar';
+ toolbar.innerHTML='<p>Want a different project at the top? Enable reorder mode, then drag cards or use the arrows.</p><div class="project-toolbar-actions"><button class="order-btn primary" id="toggleOrder" type="button" aria-pressed="false">↕ Reorder projects</button><button class="order-btn" id="resetOrder" type="button" hidden>Reset order</button></div>';
+ list.parentNode.insertBefore(toolbar,list);
+ const toggle=toolbar.querySelector('#toggleOrder'),reset=toolbar.querySelector('#resetOrder');
+ const status=document.createElement('p');status.className='order-status';status.setAttribute('aria-live','polite');toolbar.appendChild(status);
+ let enabled=false,dragged=null;
+ cards().forEach((card,i)=>{
+  card.dataset.projectId='project-'+(i+1);
+  const copy=card.querySelector('.project-copy'),handle=document.createElement('button');
+  handle.type='button';handle.className='drag-handle';handle.textContent='⠿';handle.title='Drag to reorder';handle.setAttribute('aria-label','Drag project '+(i+1));handle.hidden=true;copy.prepend(handle);
+  const controls=document.createElement('div');controls.className='move-controls';controls.hidden=true;
+  controls.innerHTML='<button type="button" data-move="up">↑ Move up</button><button type="button" data-move="down">↓ Move down</button>';copy.appendChild(controls);
+  controls.addEventListener('click',e=>{const d=e.target.closest('button')?.dataset.move;if(!d)return;const sib=d==='up'?card.previousElementSibling:card.nextElementSibling;if(!sib)return;if(d==='up')list.insertBefore(card,sib);else list.insertBefore(sib,card);save();});
+  handle.addEventListener('pointerdown',()=>card.draggable=true);
+  handle.addEventListener('pointerup',()=>card.draggable=false);
+  card.addEventListener('dragstart',e=>{if(!enabled||e.target!==handle){e.preventDefault();return;}dragged=card;card.classList.add('dragging');e.dataTransfer.effectAllowed='move';});
+  card.addEventListener('dragover',e=>{if(!enabled||!dragged||dragged===card)return;e.preventDefault();card.classList.add('drag-over');});
+  card.addEventListener('dragleave',()=>card.classList.remove('drag-over'));
+  card.addEventListener('drop',e=>{e.preventDefault();card.classList.remove('drag-over');if(!dragged||dragged===card)return;const r=card.getBoundingClientRect();list.insertBefore(dragged,e.clientY>r.top+r.height/2?card.nextElementSibling:card);save();});
+  card.addEventListener('dragend',()=>{card.classList.remove('dragging');cards().forEach(c=>c.classList.remove('drag-over'));dragged=null;card.draggable=false;});
+ });
+ function save(){try{localStorage.setItem(key,JSON.stringify(cards().map(c=>c.dataset.projectId)));status.textContent='Order saved in this browser.';}catch(_){status.textContent='Could not save in browser storage.';}refresh();}
+ function refresh(){cards().forEach((c,i,a)=>{const b=c.querySelectorAll('.move-controls button');b[0].disabled=i===0;b[1].disabled=i===a.length-1;});}
+ function mode(on){enabled=on;toggle.setAttribute('aria-pressed',String(on));toggle.textContent=on?'✓ Done reordering':'↕ Reorder projects';reset.hidden=!on;cards().forEach(c=>{c.classList.toggle('is-draggable',on);c.querySelector('.drag-handle').hidden=!on;c.querySelector('.move-controls').hidden=!on;});status.textContent=on?'Drag using ⠿, or use Move up / Move down.':'Your preferred order is saved in this browser.';refresh();}
+ let saved=[];try{saved=JSON.parse(localStorage.getItem(key)||'[]');}catch(_){}
+ if(Array.isArray(saved)&&saved.length){const map=new Map(cards().map(c=>[c.dataset.projectId,c]));saved.forEach(id=>{if(map.has(id))list.appendChild(map.get(id));});}
+ toggle.addEventListener('click',()=>mode(!enabled));
+ reset.addEventListener('click',()=>{localStorage.removeItem(key);cards().sort((a,b)=>Number(a.dataset.projectId.split('-')[1])-Number(b.dataset.projectId.split('-')[1])).forEach(c=>list.appendChild(c));status.textContent='Original order restored.';refresh();});
+ mode(false);
+})();
+</script>
 </body></html>
