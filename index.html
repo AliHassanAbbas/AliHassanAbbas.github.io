@@ -20,6 +20,14 @@
     .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{background:linear-gradient(145deg,#141f35,#10182a);border:1px solid var(--line);border-radius:14px;padding:21px}.card h3{font-size:1.08rem;margin:0 0 7px}.card p{color:var(--muted);font-size:.94rem;margin:0 0 13px}.tag{display:inline-block;color:var(--mint);font-size:.78rem;margin-right:8px}
     .columns{display:grid;grid-template-columns:1fr 1fr;gap:30px}.list{padding-left:20px;color:var(--muted)}.list li{margin:7px 0}.connect{display:flex;gap:12px;flex-wrap:wrap}.connect a{border:1px solid var(--line);padding:9px 14px;border-radius:9px;background:var(--panel)}
     footer{padding:28px 0 42px;color:var(--muted);font-size:.88rem} @media(max-width:700px){.hero{padding:65px 0 55px}.grid,.columns{grid-template-columns:1fr}nav{align-items:flex-start}.links{gap:12px!important}}
+  
+    .video-categories{display:grid;gap:22px}
+    .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:14px}
+    .video-card{display:block;overflow:hidden;border:1px solid var(--border, #ddd);border-radius:12px;text-decoration:none;background:var(--card, #fff);color:inherit}
+    .video-card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#eee}
+    .video-card span{display:block;padding:11px 12px;font-weight:600;line-height:1.4}
+    .video-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.10)}
+
   </style>
 </head>
 <body>
@@ -69,29 +77,29 @@
       </div>
     </section>
 
-    <section id="videos">
+<section id="videos">
       <h2>Selected PyTorch coding videos</h2>
-      <p class="intro">Long-form, hands-on lessons from the <a href="https://www.youtube.com/@mrelanofficial" target="_blank" rel="noopener">mrelanofficial YouTube channel</a>, focused on implementing deep-learning architectures and models with PyTorch.</p>
-      <div class="grid">
-        <article class="card"><h3>NLP & Transformers</h3><ul class="list">
-          <li><a href="https://www.youtube.com/watch?v=7ldzoCTQeSM" target="_blank" rel="noopener">Coding BERT from Scratch</a></li>
-          <li><a href="https://www.youtube.com/watch?v=g9Y4Ghc8MII" target="_blank" rel="noopener">Vision Transformer (ViT) from Scratch</a></li>
-          <li><a href="https://www.youtube.com/watch?v=EZxw6E6TZ7E&amp;t=42262s" target="_blank" rel="noopener">Coding Transformer from Scratch</a></li>
-          <li><a href="https://www.youtube.com/watch?v=s1Bt4F2IFuQ" target="_blank" rel="noopener">Sentiment Analysis with LSTM</a></li>
-          <li><a href="https://www.youtube.com/watch?v=-TCP0c1266Y&amp;t=19s" target="_blank" rel="noopener">Sentiment Analysis with Word Embeddings</a></li>
-          <li><a href="https://www.youtube.com/watch?v=rDWnyF_8hzw" target="_blank" rel="noopener">Mini Google Translate with Seq2Seq</a></li>
-        </ul></article>
-        <article class="card"><h3>Computer Vision</h3><ul class="list">
-          <li><a href="https://www.youtube.com/watch?v=iOe3HVptoJE&amp;t=3s" target="_blank" rel="noopener">ResNet from Scratch (18, 34, 50, 101, 152)</a></li>
-          <li><a href="https://www.youtube.com/watch?v=I3UWuBnlr_g" target="_blank" rel="noopener">VGGNet from Scratch (11, 13, 16, 19)</a></li>
-          <li><a href="https://www.youtube.com/watch?v=1PTxKyYNPlk" target="_blank" rel="noopener">AlexNet from Scratch</a></li>
-          <li><a href="https://www.youtube.com/watch?v=IaOq_LN2bEY&amp;t=51s" target="_blank" rel="noopener">LeNet-5 from Scratch</a></li>
-          <li><a href="https://www.youtube.com/watch?v=IXC2ZG1mGEM" target="_blank" rel="noopener">Image Classification with MLP</a></li>
-        </ul></article>
-        <article class="card"><h3>Generative AI</h3><ul class="list">
-          <li><a href="https://www.youtube.com/watch?v=1zdRriruHpQ&amp;t=2333s" target="_blank" rel="noopener">DCGAN from Scratch</a></li>
-          <li><a href="https://www.youtube.com/watch?v=ExtS9Z2wJp8&amp;t=24s" target="_blank" rel="noopener">Generative Adversarial Networks (GAN) from Scratch</a></li>
-        </ul></article>
+      <p class="intro">Watch the actual video thumbnails below. Each thumbnail opens its full lesson on the <a href="https://www.youtube.com/@mrelanofficial" target="_blank" rel="noopener">mrelanofficial YouTube channel</a>.</p>
+      <div class="video-categories">
+        <article class="card video-category"><h3>NLP & Transformers</h3><div class="video-grid">
+<a class="video-card" href="https://www.youtube.com/watch?v=7ldzoCTQeSM" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/7ldzoCTQeSM/hqdefault.jpg" alt="BERT from Scratch YouTube thumbnail" loading="lazy"><span>BERT from Scratch</span></a>
+<a class="video-card" href="https://www.youtube.com/watch?v=EZxw6E6TZ7E" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/EZxw6E6TZ7E/hqdefault.jpg" alt="Transformer from Scratch YouTube thumbnail" loading="lazy"><span>Transformer from Scratch</span></a>
+<a class="video-card" href="https://www.youtube.com/watch?v=s1Bt4F2IFuQ" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/s1Bt4F2IFuQ/hqdefault.jpg" alt="Sentiment Analysis with LSTM YouTube thumbnail" loading="lazy"><span>Sentiment Analysis with LSTM</span></a>
+<a class="video-card" href="https://www.youtube.com/watch?v=-TCP0c1266Y" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/-TCP0c1266Y/hqdefault.jpg" alt="Sentiment Analysis with Word Embeddings YouTube thumbnail" loading="lazy"><span>Sentiment Analysis with Word Embeddings</span></a>
+<a class="video-card" href="https://www.youtube.com/watch?v=rDWnyF_8hzw" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/rDWnyF_8hzw/hqdefault.jpg" alt="Mini Google Translate with Seq2Seq YouTube thumbnail" loading="lazy"><span>Mini Google Translate with Seq2Seq</span></a>
+</div></article>
+<article class="card video-category"><h3>Computer Vision</h3><div class="video-grid">
+<a class="video-card" href="https://www.youtube.com/watch?v=g9Y4Ghc8MII" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/g9Y4Ghc8MII/hqdefault.jpg" alt="Vision Transformer (ViT) from Scratch YouTube thumbnail" loading="lazy"><span>Vision Transformer (ViT) from Scratch</span></a>
+<a class="video-card" href="https://www.youtube.com/watch?v=iOe3HVptoJE" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/iOe3HVptoJE/hqdefault.jpg" alt="ResNet from Scratch (ResNet18–152) YouTube thumbnail" loading="lazy"><span>ResNet from Scratch (ResNet18–152)</span></a>
+<a class="video-card" href="https://www.youtube.com/watch?v=I3UWuBnlr_g" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/I3UWuBnlr_g/hqdefault.jpg" alt="VGGNet from Scratch (VGG11–19) YouTube thumbnail" loading="lazy"><span>VGGNet from Scratch (VGG11–19)</span></a>
+<a class="video-card" href="https://www.youtube.com/watch?v=1PTxKyYNPlk" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/1PTxKyYNPlk/hqdefault.jpg" alt="AlexNet from Scratch YouTube thumbnail" loading="lazy"><span>AlexNet from Scratch</span></a>
+<a class="video-card" href="https://www.youtube.com/watch?v=IaOq_LN2bEY" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/IaOq_LN2bEY/hqdefault.jpg" alt="LeNet-5 from Scratch YouTube thumbnail" loading="lazy"><span>LeNet-5 from Scratch</span></a>
+<a class="video-card" href="https://www.youtube.com/watch?v=IXC2ZG1mGEM" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/IXC2ZG1mGEM/hqdefault.jpg" alt="Image Classification with MLP YouTube thumbnail" loading="lazy"><span>Image Classification with MLP</span></a>
+</div></article>
+<article class="card video-category"><h3>Generative AI</h3><div class="video-grid">
+<a class="video-card" href="https://www.youtube.com/watch?v=1zdRriruHpQ" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/1zdRriruHpQ/hqdefault.jpg" alt="DCGAN from Scratch YouTube thumbnail" loading="lazy"><span>DCGAN from Scratch</span></a>
+<a class="video-card" href="https://www.youtube.com/watch?v=ExtS9Z2wJp8" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/ExtS9Z2wJp8/hqdefault.jpg" alt="GAN from Scratch YouTube thumbnail" loading="lazy"><span>GAN from Scratch</span></a>
+</div></article>
       </div>
       <p class="intro" style="margin-top:20px"><a href="https://www.youtube.com/@mrelanofficial" target="_blank" rel="noopener">Explore more PyTorch lessons on YouTube →</a></p>
     </section>
