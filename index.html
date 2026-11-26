@@ -80,21 +80,63 @@
     .footer-meta{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.footer-meta a{color:var(--muted)}.footer-meta a:hover{color:var(--cyan)}
     @media(max-width:760px){.hero{padding:76px 0 65px}.hero:after{right:-3%;top:20%;font-size:12rem}.grid,.columns{grid-template-columns:1fr}.project-card{grid-template-columns:1fr}.project-video,.project-placeholder{grid-row:2}.contact-grid{grid-template-columns:1fr}.wrap{width:min(var(--max),calc(100% - 32px))}nav{align-items:flex-start}.links{gap:13px!important}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+
+    .hero{padding-top:100px;padding-bottom:64px}
+    .hero h1{font-size:clamp(3.5rem,9vw,7.4rem);line-height:.91;letter-spacing:-.085em;margin:25px 0 14px}
+    .hero h1 span{background:linear-gradient(100deg,#7de9f3 4%,#91aaff 54%,#c1a0ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero-role{font-size:clamp(1.05rem,2.4vw,1.45rem);font-weight:750;letter-spacing:-.025em;margin:0 0 14px;color:#dbe9ff}
+    .hero-meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:20px;color:var(--muted);font-size:.83rem}
+    .hero-meta span{display:inline-flex;align-items:center;gap:8px}
+    .hero-meta i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
+    .proof-strip{display:flex;gap:0;flex-wrap:wrap;margin-top:55px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);max-width:720px}
+    .proof-strip div{padding:17px 34px 17px 0;margin-right:34px;display:flex;flex-direction:column}
+    .proof-strip strong{font-size:1.65rem;letter-spacing:-.06em;color:#f2f7ff;line-height:1.2}
+    .proof-strip span{font-size:.74rem;color:var(--muted);margin-top:4px}
+    .section-kicker,.panel-index{font-size:.69rem;letter-spacing:.16em;font-weight:850;color:var(--green);text-transform:uppercase}
+    .section-kicker{margin-bottom:12px}
+    .about-grid,.expertise-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px}
+    .about-panel,.expertise-card{padding:23px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,rgba(17,29,50,.88),rgba(10,18,33,.92));min-width:0}
+    .about-panel h3,.expertise-card h3{font-size:1.02rem;line-height:1.35;margin:14px 0 8px}
+    .about-panel p{font-size:.88rem;color:var(--muted);margin:0}
+    .expertise-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .skill-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:15px}
+    .skill-tags span{font-size:.75rem;color:#d7e6fb;padding:5px 9px;border:1px solid rgba(130,170,255,.2);border-radius:6px;background:rgba(36,57,91,.3)}
+    .project-copy p{line-height:1.72}
+    .project-card{min-height:210px}
+    #focus .card{min-height:185px}
+    #teaching .columns>div{padding:23px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,rgba(17,29,50,.82),rgba(10,18,33,.9))}
+    #teaching h3{margin-top:0}
+    #connect{padding-bottom:82px}
+    @media(max-width:760px){.about-grid,.expertise-grid{grid-template-columns:1fr}.proof-strip{margin-top:35px}.proof-strip div{padding-right:20px;margin-right:15px}.hero h1{font-size:clamp(3.3rem,16vw,5.2rem)}nav .links{gap:12px!important}.hero{padding-top:70px}}
   </style>
 </head>
 <body>
-<header><div class="wrap"><nav><a class="brand" href="#">ALI HASSAN ABBAS</a><div class="links"><a href="#work">Projects</a><a href="#focus">Research</a><a href="#teaching">Teaching</a><a href="#connect">Contact</a></div></nav></div></header>
+<header><div class="wrap"><nav><a class="brand" href="#">ALI HASSAN ABBAS</a><div class="links"><a href="#about">About</a><a href="#work">Projects</a><a href="#expertise">Expertise</a><a href="#focus">Research</a><a href="#teaching">Teaching</a><a href="#connect">Contact</a></div></nav></div></header>
 <main>
   <div class="wrap">
     <section class="hero" style="border:0">
-      <div class="eyebrow">AI Research · Deep Learning · PyTorch</div>
-      <h1>Building AI by <span>understanding it</span> from the inside out.</h1>
-      <p class="lead">I'm Ali Hassan Abbas, an AI researcher and PyTorch specialist focused on implementing deep-learning architectures, exploring modern AI systems, and teaching the ideas behind the code.</p>
-      <div class="actions"><a class="btn primary" href="#work">Explore my projects</a><a class="btn" href="mailto:alihassanofficial795@gmail.com">Contact me</a><a class="btn" href="https://www.linkedin.com/in/alihassanofficial/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn" href="https://github.com/AliHassanAbbas" target="_blank" rel="noopener">GitHub ↗</a></div>
+      <div class="eyebrow">Independent AI Researcher · PyTorch Specialist · Educator</div>
+      <h1>ALI HASSAN<br><span>ABBAS</span></h1>
+      <p class="hero-role">AI Researcher &amp; Deep Learning Engineer</p>
+      <p class="lead">I build and teach deep-learning systems from first principles — implementing research architectures in PyTorch, studying how they work, and making advanced AI understandable through code.</p>
+      <div class="hero-meta"><span><i></i> Islamabad, Pakistan</span><span>Open to research &amp; teaching collaborations</span></div>
+      <div class="actions"><a class="btn primary" href="#work">Explore selected work</a><a class="btn" href="mailto:alihassanofficial795@gmail.com">Let's collaborate ↗</a><a class="btn" href="https://www.linkedin.com/in/alihassanofficial/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn" href="https://github.com/AliHassanAbbas" target="_blank" rel="noopener">GitHub ↗</a></div>
+      <div class="proof-strip"><div><strong>14K+</strong><span>LinkedIn community</span></div><div><strong>4K+</strong><span>YouTube subscribers</span></div><div><strong>200+ hrs</strong><span>AI &amp; PyTorch lessons</span></div></div>
+    </section>
+
+    <section id="about">
+      <div class="section-kicker">01 / PROFILE</div>
+      <h2>Research mindset. Builder's approach.</h2>
+      <p class="intro">I am a self-taught AI researcher and educator focused on understanding machine learning beyond high-level APIs. My work centres on implementing architectures, tracing the mathematics into tensor operations, and explaining the engineering decisions behind modern deep-learning systems.</p>
+      <div class="about-grid">
+        <article class="about-panel"><span class="panel-index">01 — BUILD</span><h3>Implement from first principles</h3><p>From attention mechanisms and Transformers to diffusion components and vision-language models, I focus on how the pieces fit together — not just how to call a pretrained model.</p></article>
+        <article class="about-panel"><span class="panel-index">02 — INVESTIGATE</span><h3>Understand the research</h3><p>I study model architectures, training workflows, tokenization, optimization, inference, and the ideas that make modern AI systems work.</p></article>
+        <article class="about-panel"><span class="panel-index">03 — TEACH</span><h3>Make complex AI accessible</h3><p>Through long-form lessons and practical notebooks, I teach deep learning with equations, tensor shapes, implementation details, and experiments.</p></article>
+      </div>
     </section>
 
     <section id="work">
-      <h2>Selected projects</h2><p class="intro">A curated collection of hands-on PyTorch implementations. Explore the notebook or repository, and watch the corresponding walkthrough directly from each project card.</p>
+      <div class="section-kicker">02 / SELECTED WORK</div><h2>Architectures, implemented.</h2><p class="intro">A curated selection of hands-on implementations and educational deep-learning series. Each project links to its code, notebook, or full technical walkthrough.</p>
       <div class="project-list">
         <article class="project-card">
   <div class="project-copy">
@@ -243,8 +285,20 @@
       </div>
     </section>
 
+    <section id="expertise">
+      <div class="section-kicker">03 / TECHNICAL EXPERTISE</div>
+      <h2>My technical toolkit</h2>
+      <p class="intro">A practical toolkit centred on deep-learning research, architecture implementation, experimentation, and technical education.</p>
+      <div class="expertise-grid">
+        <article class="expertise-card"><span class="panel-index">01 / CORE FRAMEWORK</span><h3>Deep Learning &amp; PyTorch</h3><div class="skill-tags"><span>PyTorch</span><span>Autograd</span><span>Training loops</span><span>Optimization</span><span>Tensor operations</span><span>GPU workflows</span></div></article>
+        <article class="expertise-card"><span class="panel-index">02 / GENERATIVE AI</span><h3>Generative &amp; Language Models</h3><div class="skill-tags"><span>Transformers</span><span>GPT / LLMs</span><span>Diffusion models</span><span>GANs</span><span>Tokenization</span><span>Multimodal AI</span></div></article>
+        <article class="expertise-card"><span class="panel-index">03 / VISUAL INTELLIGENCE</span><h3>Computer Vision</h3><div class="skill-tags"><span>CNN architectures</span><span>Vision Transformer</span><span>Swin Transformer</span><span>Image segmentation</span><span>Representation learning</span></div></article>
+        <article class="expertise-card"><span class="panel-index">04 / FOUNDATIONS</span><h3>Research &amp; Engineering</h3><div class="skill-tags"><span>Python</span><span>NumPy</span><span>Linear algebra</span><span>Calculus</span><span>Model evaluation</span><span>Experiment tracking</span><span>Git / GitHub</span></div></article>
+      </div>
+    </section>
+
     <section id="focus">
-      <h2>Research and technical interests</h2><p class="intro">My focus is on understanding architectures, implementing their key components, and studying how design choices affect learning and performance.</p>
+      <div class="section-kicker">04 / RESEARCH DIRECTIONS</div><h2>Research and technical interests</h2><p class="intro">The questions I am most interested in: how architectures represent information, how training choices affect model behaviour, and how complex systems can be built and understood component by component.</p>
       <div class="grid">
         <article class="card"><h3>Deep learning architectures</h3><p>Neural networks, CNNs, sequence models, attention mechanisms, and Transformers.</p><span class="tag">PyTorch</span><span class="tag">Model implementation</span></article>
         <article class="card"><h3>Generative and multimodal AI</h3><p>GANs, diffusion-model components, vision-language models, and multimodal workflows.</p><span class="tag">Generative AI</span><span class="tag">Multimodal</span></article>
@@ -265,9 +319,9 @@
     </section>
 
 <section id="teaching">
-      <h2>Teaching and education</h2><p class="intro">I teach AI and deep learning with a first-principles approach: connect the mathematics to tensor shapes, implementation details, training behavior, and experiments.</p>
+      <div class="section-kicker">05 / EDUCATION</div><h2>Teaching AI beyond the black box</h2><p class="intro">I create detailed, implementation-first learning experiences for people who want to become AI practitioners and researchers — not just users of AI tools.</p>
       <div class="columns">
-        <div><h3>Learn with me</h3><ul class="list"><li><a href="https://www.youtube.com/@mrelanofficial">Ali Hassan AI on YouTube</a> — practical AI and PyTorch lessons</li><li><a href="https://mrelan.com">mrelan.com</a> — structured deep-learning education</li></ul></div>
+        <div><h3>Courses &amp; learning</h3><ul class="list"><li><a href="https://www.youtube.com/@mrelanofficial">Ali Hassan AI on YouTube</a> — in-depth AI, PyTorch, and architecture walkthroughs</li><li><a href="https://mrelan.com">mrelan.com</a> — structured deep-learning and generative-AI course</li><li><a href="https://github.com/AliHassanAbbas">GitHub repositories</a> — notebooks and implementation-focused learning resources</li></ul></div>
         <div><h3>Teaching philosophy</h3><ul class="list"><li>Understand the idea before writing the code</li><li>Build architectures component by component</li><li>Explain dimensions, equations, and training decisions</li><li>Learn through experiments, not black-box shortcuts</li></ul></div>
       </div>
     </section>
